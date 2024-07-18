@@ -143,7 +143,11 @@ export function VisualData({ columns, data }: VisualDataProps) {
                             )}
                         {header.id !== "select" && (
                           <Input
-                            placeholder={`Filter ${header.id}...`}
+                            placeholder={`Filter ${
+                              header.id === "customer_id"
+                                ? "customers"
+                                : header.id
+                            }...`}
                             value={
                               (table
                                 .getColumn(header.id)
